@@ -7,7 +7,7 @@
 <p><strong>Date</strong>: <% @slot.start_date %> - <% @slot.end_date %></p>
 <p><strong>Date</strong>: <% @slot.start_time %> - <% @slot.end_time %></p>
 
-<%# <%= link_to "Book this slot" %>
-<%# <%= link_to "Edit this slot", edit_slot_path(@slot) %>
+<%# <%= link_to "Book this slot", new_gig_path(@gig) %> %>
+<%= link_to "Edit this slot", edit_slot_path(@slot) %>
 <%= link_to "Back to slots", slots_path %>
 <%= link_to "Delete Slot", @slot, class: "btn btn-cancel", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this slot?" } if @slot.user == current_user %>
