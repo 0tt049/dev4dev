@@ -23,6 +23,19 @@ class SlotsController < ApplicationController
     end
   end
 
+  def edit
+    @slot = Slot.find(params[:id])
+  end
+
+  def update
+    @slot = Slot.find(params[:id])
+    if @slot.update(slot_params)
+      redirect_to @slot, notice: 'Article was successfully created.'
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def slot_params
