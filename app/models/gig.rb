@@ -3,5 +3,6 @@ class Gig < ApplicationRecord
   belongs_to :slot
 
   validades :name, :description, presence: true
-  validates :name, length: { minimum: 3 }
+  validates :name, :description, length: { minimum: 3 }
+  validades :user_id, uniqueness: { scope: :slot_id }
 end
