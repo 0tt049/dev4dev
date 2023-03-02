@@ -25,7 +25,6 @@ class SlotsController < ApplicationController
     end
   end
 
-<<<<<<< HEAD
   def edit
     @slot = Slot.find(params[:id])
   end
@@ -37,12 +36,11 @@ class SlotsController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
-=======
+    
   def destroy
     @slot = Slot.find(params[:id])
     @slot.destroy
     redirect_to slots_path, status: :see_other
->>>>>>> master
   end
 
   private
