@@ -4,12 +4,11 @@
 <p><strong>Dev's name</strong>: <%= @slot.user.name %></p>
 <p><strong>Price</strong>: USD <%= @slot.price %></p>
 <p><strong>Programming language</strong>: <%= @slot.programming_language %></p>
-<p><strong>Date</strong>: <% slot.start_date %> - <% slot.end_date %></p>
-<p><strong>End date</strong>: <%= @slot.end_date %></p>
-<p><strong>End time</strong>: <%= @slot.end_time %></p>
+<p><strong>Date</strong>: <% @slot.start_date %> - <% @slot.end_date %></p>
+<p><strong>Date</strong>: <% @slot.start_time %> - <% @slot.end_time %></p>
 
 <%# <%= link_to "Book this slot" %>
-<%= link_to "Edit this slot", edit_slot_path(@slot) %>
+<%# <%= link_to "Edit this slot", edit_slot_path(@slot) %>
 <%= link_to "Back to slots", slots_path %>
 
 <%= button_to "Destroy this slot", @slot, method: :delete, class: 'btn btn-danger' if @slot.user == current_user %>
