@@ -36,7 +36,8 @@ class SlotsController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
-    
+  end
+  
   def destroy
     @slot = Slot.find(params[:id])
     @slot.destroy
