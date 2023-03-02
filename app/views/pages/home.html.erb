@@ -1,2 +1,28 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Welcome to Dev4Dev</h1>
+<% if user_signed_in? %>
+  <p>Find a programmer by a language of your choice</p>
+
+  <ul class="my-5 text-center" style="align-items:center;">
+    <% Slot::PROGRAMMING_LANGUAGES.each do |p_language| %>
+
+      <li class="card my-5 p-5 rounded shadow" style="width: 30%;">
+
+        <%= link_to slots_path(p_language), class: "btn btn-primary my-3", style: "align-items:center;width:100px;align-self:center" do %>
+
+          <h2>
+            <%= p_language %>
+          </h2>
+
+        <% end %>
+
+      </li>
+
+    <% end %>
+  </ul>
+
+<% else %>
+
+  <p>Please Sign up or Log in</p>
+  <%= link_to 'log in', new_user_session_path %>
+
+<% end %>
