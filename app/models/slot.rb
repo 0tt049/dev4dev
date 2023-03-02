@@ -6,7 +6,7 @@ class Slot < ApplicationRecord
   validates :price, :programming_language, :start_date, :end_date, :start_time, :end_time, presence: true
   validates :programming_language, acceptance: { accept: PROGRAMMING_LANGUAGES }
 
-  has_many :projects
+  has_many :gigs
   belongs_to :user
 end
 
