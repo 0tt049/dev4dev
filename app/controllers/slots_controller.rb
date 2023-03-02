@@ -15,9 +15,9 @@ class SlotsController < ApplicationController
   def create
     @slot = Slot.new(slot_params)
     @user = current_user
-    @slot.user = @user
+    @slot.user_id = @user.id
     if @slot.save
-      redirect_to @slot, notice: 'Your slot was successfully created!'
+      redirect_to slot_path(@slot), notice: 'Your slot was successfully created!'
     else
       render :new, status: :unprocessable_entity
     end
