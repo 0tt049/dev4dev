@@ -1,5 +1,5 @@
 
-<%= simple_form_for [user_id, slot] do |f| %>
+<%= simple_form_for slot do |f| %>
   <%= f.input :programming_language, collection: Slot::PROGRAMMING_LANGUAGES, error: 'Setting a programming language is mandatory' %>
   <%= f.input :start_date, error: "You must set a start date" %>
   <%= f.input :end_date, error: "You must set an end date" %>

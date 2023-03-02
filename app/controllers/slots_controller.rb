@@ -17,7 +17,7 @@ class SlotsController < ApplicationController
     @user = current_user
     @slot.user = @user
     if @slot.save
-      redirect_to @slot, notice: 'Your slot was successfully created!'
+      redirect_to slot_path(@slot), notice: 'Your slot was successfully created!'
     else
       render :new, status: :unprocessable_entity
     end
