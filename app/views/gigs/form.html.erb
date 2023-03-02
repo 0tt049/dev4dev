@@ -1,0 +1,6 @@
+<%= simple_form_for [@user, @gig] do |f| %>
+  <%= f.input :name, placeholder: "Name your gig here!" %>
+  <%= f.input :description, placeholder: "Describe your gig!" %>
+  <%= f.association :slot, prompt: "Select a slot", input_html: {data: {controller: "tom-select"}} %>
+  <%= f.submit class: "btn btn-flat" %>
+<% end %>

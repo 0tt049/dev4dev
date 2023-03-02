@@ -32,6 +32,6 @@ class GigsController < ApplicationController
   end
 
   def set_slot
-    @user = User.find(params[:user_id])
+    @slot = Slot.find(params[:slot_id])
   end
 end
