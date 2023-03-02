@@ -8,7 +8,7 @@ class Slot < ApplicationRecord
 
   # acceptance: { accept: PROGRAMMING_LANGUAGES }
 
-  has_many :projects
+  has_many :gigs
   belongs_to :user
 end
 

@@ -1,4 +1,4 @@
-class Project < ApplicationRecord
+class Gig < ApplicationRecord
   belongs_to :user
   belongs_to :slot
 
