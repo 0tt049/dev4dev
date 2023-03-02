@@ -8,6 +8,7 @@ class GigsController < ApplicationController
 
   def create
     @gig = Gig.new(gig_params)
+    @gig.user = @user
     if @gig.save
       redirect_to @gig, notice: 'Your gig was successfully created!'
     else
@@ -16,21 +17,21 @@ class GigsController < ApplicationController
   end
 
   def destroy
-    @gig.destroy
-    redirect_to '/', status: :see_other
+    # @gig.destroy
+    # redirect_to '/', status: :see_other
   end
 
   private
+
+  def gig_params
+    params.require(:gig).permit(:name, :description, :slot_id)
+  end
 
   def set_gig
     @gig = Gig.find(params[:id])
   end
 
-  def set_user
+  def set_slot
     @user = User.find(params[:user_id])
-  end
-
-  def gig_params
-    params.require(:gig).permit(:name, :description)
   end
 end
