@@ -12,7 +12,7 @@ class SlotsController < ApplicationController
   def new
     @slot = Slot.new
     @user = current_user
-  end
+  endit
 
   def create
     @slot = Slot.new(slot_params)
@@ -32,12 +32,12 @@ class SlotsController < ApplicationController
   def update
     @slot = Slot.find(params[:id])
     if @slot.update(slot_params)
-      redirect_to @slot, notice: 'Article was successfully created.'
+      redirect_to @slot, notice: 'Slot updated!'
     else
       render :edit, status: :unprocessable_entity
     end
   end
-  
+
   def destroy
     @slot = Slot.find(params[:id])
     @slot.destroy
