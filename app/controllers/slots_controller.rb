@@ -9,10 +9,13 @@ class SlotsController < ApplicationController
 
   def new
     @slot = Slot.new
+    @user = current_user
   end
 
   def create
     @slot = Slot.new(slot_params)
+    @user = current_user
+    @slot.user = @user
     if @slot.save
       redirect_to @slot, notice: 'Your slot was successfully created!'
     else
