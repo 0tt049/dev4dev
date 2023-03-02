@@ -12,7 +12,7 @@ class SlotsController < ApplicationController
   def new
     @slot = Slot.new
     @user = current_user
-  endit
+  end
 
   def create
     @slot = Slot.new(slot_params)
