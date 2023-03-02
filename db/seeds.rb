@@ -12,7 +12,7 @@ User.destroy_all
 puts "Database cleaned"
 
 puts "Creating users..."
-10.times do
+15.times do
   User.create!(
     name: Faker::Name.name,
     email: Faker::Internet.email,
@@ -25,7 +25,7 @@ programming_language = %w[
   C# C++ CSS HTML Java JavaScript PHP PowerShell Python
   Ruby Rust TypeScript
 ]
-20.times do
+40.times do
   user = User.order("RANDOM()").first
   Slot.create!(
     user_id: user.id,

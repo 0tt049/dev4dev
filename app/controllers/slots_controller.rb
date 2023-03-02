@@ -1,6 +1,8 @@
 class SlotsController < ApplicationController
   def index
     @slots = Slot.all
+
+    @slots = @slots.where(programming_language: params[:format]) if params[:format].present?
   end
 
   def show
