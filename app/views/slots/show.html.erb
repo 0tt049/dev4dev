@@ -4,8 +4,8 @@
 <p><strong>Dev's name</strong>: <%= @slot.user.name %></p>
 <p><strong>Price</strong>: USD <%= @slot.price %></p>
 <p><strong>Programming language</strong>: <%= @slot.programming_language %></p>
-<p><strong>Date</strong>: <% @slot.start_date %> - <% @slot.end_date %></p>
-<p><strong>Date</strong>: <% @slot.start_time %> - <% @slot.end_time %></p>
+<p><strong>Date</strong>: <% @slot.start_date.strftime('%d/%m') %> - <% @slot.end_date.strftime('%d/%m') %></p>
+<p><strong>Time</strong>: <% @slot.start_time.strftime('%R') %> - <% @slot.end_time.strftime('%R') %></p>
 
 <%# <%= link_to "Book this slot", new_gig_path(@gig) %> %>
 <%= link_to "Edit this slot", edit_slot_path(@slot) %>
