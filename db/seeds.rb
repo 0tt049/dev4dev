@@ -16,12 +16,16 @@ puts "Creating users..."
 end
 
 puts "Creating slots..."
+programming_language = %w[
+  C# C++ CSS HTML Java JavaScript PHP PowerShell Python
+  Ruby Rust TypeScript
+]
 20.times do
   user = User.order("RANDOM()").first
   Slot.create!(
     user_id: user.id,
     price: rand(200..1000),
-    programming_language: Faker::ProgrammingLanguage.name,
+    programming_language: programming_language.sample,
     start_date: Faker::Date.between(from: '2023-01-01', to: '2023-06-30'),
     end_date: Faker::Date.between(from: '2023-07-01', to: '2023-12-31'),
     start_time: Faker::Time.between(from: '8:00 AM', to: '6:00 PM'),
