@@ -10,5 +10,4 @@
 <%# <%= link_to "Book this slot" %>
 <%# <%= link_to "Edit this slot", edit_slot_path(@slot) %>
 <%= link_to "Back to slots", slots_path %>
-
-<%= button_to "Destroy this slot", @slot, method: :delete, class: 'btn btn-danger' if @slot.user == current_user %>
+<%= link_to "Delete Slot", @slot, class: "btn btn-cancel", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this slot?" } %>

@@ -6,7 +6,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
-  resources :slots, only: %i[index show new create] do
+  resources :slots, only: %i[index show new create destroy] do
     resources :gigs, only: %i[new create]
   end
 end

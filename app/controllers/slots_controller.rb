@@ -23,6 +23,12 @@ class SlotsController < ApplicationController
     end
   end
 
+  def destroy
+    @slot = Slot.find(params[:id])
+    @slot.destroy
+    redirect_to slots_path, status: :see_other
+  end
+
   private
 
   def slot_params
