@@ -5,10 +5,18 @@ class Slot < ApplicationRecord
   ]
   validates :price, :programming_language, :start_date, :end_date, :start_time, :end_time, presence: true
   validates :programming_language, acceptance: { accept: PROGRAMMING_LANGUAGES }
+  validates :start_date_cannot_be_in_the_past, presence: true
 
   has_many :gigs
   belongs_to :user
-end
+
+  private
+
+  def start_date_cannot_be_in_the_past
+    if start_date.present? && start_date < Date.today
+      errors.add(:start_date)
+    end
+  end
 
   # If autocomplete is made, use this array
   # PROGRAMMING_LANGUAGES = %w[1C Enterprise
@@ -667,3 +675,4 @@ end
   #   Zig
   #   ZIL
   #   Zimpl]
+end
