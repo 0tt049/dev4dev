@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :slots do
     resources :gigs, only: %i[new create]
   end
+  resources :users, only: [:show]
 end
