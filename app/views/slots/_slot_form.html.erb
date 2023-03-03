@@ -6,8 +6,8 @@
     <%= f.input :programming_language, collection: Slot::PROGRAMMING_LANGUAGES, error: 'Setting a programming language is mandatory' %>
   <% end %>
 
-  <%= f.input :start_date, error: "The start date must be greater than or equal to today" %>
-  <%= f.input :end_date, error: "You must set an end date", selected: (Time.now + (66 * 60 * 5)) %>
+  <%= f.input :start_date, as: :string, label: "Start Date", placeholder: "From", wrapper_html: { class: "inline_field_wrapper" } %>
+  <%= f.input :end_date, as: :string, label: 'End Date', placeholder: "To", wrapper_html: { class: "inline_field_wrapper" } %>
   <%= f.input :start_time, error: "You must set a start time", selected: Time.now %>
   <%= f.input :end_time, error: "You must set an end time", selected: (Time.now + (66 * 60 * 5))  %>
   <%= f.input :price, error: "You must set a price" %>

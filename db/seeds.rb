@@ -20,22 +20,36 @@ puts "Creating users..."
   )
 end
 
-puts "Creating slots..."
-programming_language = %w[
-  C# C++ CSS HTML Java JavaScript PHP PowerShell Python
-  Ruby Rust TypeScript
-]
-40.times do
+# puts "Creating slots..."
+# programming_language = %w[
+#   C# C++ CSS HTML Java JavaScript PHP PowerShell Python
+#   Ruby Rust TypeScript
+# ]
+
+# start_date = Faker::Date.between(from: '2023-04-01', to: '2023-06-30')
+# start_time = Faker::Time.between(from: '8:00 AM', to: '6:00 PM')
+
+# 40.times do
+#   user = User.order("RANDOM()").first
+#   Slot.create!(
+#     user_id: user.id,
+#     price: rand(200..1000),
+#     programming_language: programming_language.sample,
+#     start_date: start_date,
+#     end_date: start_date + (66*60*24),
+#     start_time: start_time,
+#     end_time: start_time + (66*60*24)
+#   )
+# end
   user = User.order("RANDOM()").first
   Slot.create!(
     user_id: user.id,
     price: rand(200..1000),
-    programming_language: programming_language.sample,
-    start_date: Faker::Date.between(from: '2023-01-01', to: '2023-06-30'),
-    end_date: Faker::Date.between(from: '2023-07-01', to: '2023-12-31'),
-    start_time: Faker::Time.between(from: '8:00 AM', to: '6:00 PM'),
-    end_time: Faker::Time.between(from: '8:00 AM', to: '8:00 PM')
+    programming_language: 'Python',
+    start_date: '2023-03-04',
+    end_date: '2023-06-30',
+    start_time: '8:00 AM',
+    end_time: '06:00 PM'
   )
-end
 
 puts "Finished!"
