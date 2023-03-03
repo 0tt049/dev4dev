@@ -22,6 +22,10 @@ class GigsController < ApplicationController
     # redirect_to '/', status: :see_other
   end
 
+  def hired
+    @gigs = Gig.where(user_id: current_user.id)
+  end
+
   private
 
   def gig_params
