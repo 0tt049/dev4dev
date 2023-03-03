@@ -3,6 +3,18 @@
   <p>Find a programmer by a language of your choice</p>
 
   <ul class="my-5 text-center" style="align-items:center;">
+  <li class="card my-5 p-5 rounded shadow" style="width: 30%;">
+
+        <%= link_to slots_path, class: "btn btn-primary my-3", style: "align-items:center;width:100px;align-self:center" do %>
+
+          <h2>
+            <strong>
+              All
+            </strong>
+            Slots
+          </h2>
+
+        <% end %>
     <% Slot::PROGRAMMING_LANGUAGES.each do |p_language| %>
 
       <li class="card my-5 p-5 rounded shadow" style="width: 30%;">
@@ -10,7 +22,9 @@
         <%= link_to slots_path(p_language), class: "btn btn-primary my-3", style: "align-items:center;width:100px;align-self:center" do %>
 
           <h2>
-            <%= p_language %>
+            <strong>
+              <%= p_language %>
+            </strong>
             Slots
           </h2>
 

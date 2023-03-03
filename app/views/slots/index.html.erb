@@ -1,4 +1,7 @@
-<h2>Check <strong><%= @slots.first.programming_language %></strong> slots</h2>
+<h2>Check <strong><%= params[:format] %></strong> slots</h2>
+
+<%= link_to "Add a slot", new_slot_path(params[:format]), class: "btn btn-warning"%>
+
 <ul class="my-5 text-center" style="align-items:center;">
   <% @slots.each do |slot| %>
 
@@ -21,7 +24,6 @@
 
   <% end %>
 </ul>
-<%= link_to "Add a slot", new_slot_path, class: "btn btn-warning"%>
 
 <%#= link_to "See details", slot_path(slot), class: "card-product", do %>
   <%# <div class="card-product"> %>

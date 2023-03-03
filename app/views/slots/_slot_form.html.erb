@@ -1,10 +1,15 @@
-
 <%= simple_form_for slot do |f| %>
-  <%= f.input :programming_language, collection: Slot::PROGRAMMING_LANGUAGES, error: 'Setting a programming language is mandatory' %>
-  <%= f.input :start_date, error: "You must set a start date" %>
-  <%= f.input :end_date, error: "You must set an end date" %>
-  <%= f.input :start_time, error: "You must set a start time" %>
-  <%= f.input :end_time, error: "You must set an end time" %>
+
+  <% if params[:format].present? %>
+    <%= f.input :programming_language, collection: Slot::PROGRAMMING_LANGUAGES, selected: params[:format], error: 'Setting a programming language is mandatory' %>
+  <% else %>
+    <%= f.input :programming_language, collection: Slot::PROGRAMMING_LANGUAGES, error: 'Setting a programming language is mandatory' %>
+  <% end %>
+
+  <%= f.input :start_date, error: "You must set a start date", selected: Time.now %>
+  <%= f.input :end_date, error: "You must set an end date", selected: (Time.now + (66 * 60 * 5)) %>
+  <%= f.input :start_time, error: "You must set a start time", selected: Time.now %>
+  <%= f.input :end_time, error: "You must set an end time", selected: (Time.now + (66 * 60 * 5))  %>
   <%= f.input :price, error: "You must set a price" %>
 
   <%= f.button :submit, class: 'btn btn-success'%>

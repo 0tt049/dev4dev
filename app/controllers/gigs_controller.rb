@@ -1,6 +1,6 @@
 class GigsController < ApplicationController
   before_action :set_gig, only: :destroy
-  before_action :set_user, only: %i[new create]
+  before_action :set_slot, only: %i[new create]
 
   def new
     @gig = Gig.new
@@ -8,7 +8,8 @@ class GigsController < ApplicationController
 
   def create
     @gig = Gig.new(gig_params)
-    @gig.user = @user
+    @gig.user = current_user
+    @gig.slot = @slot
     if @gig.save
       redirect_to @gig, notice: 'Your gig was successfully created!'
     else
