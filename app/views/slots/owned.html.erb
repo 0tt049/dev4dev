@@ -2,7 +2,7 @@
 
 <% @slots.each do |slot| %>
   <div class="my-slot my-3 rounded p-3">
-    <p><strong>Price</strong>: <%= slot.price %> USD</p>
+    <p><strong>Price</strong>: <%= slot.price %></p>
     <p><strong>Programming language</strong>: <%= slot.programming_language %></p>
     <p><strong>Date</strong>: <%= slot.start_date.strftime('%d/%m') %> - <%= slot.end_date.strftime('%d/%m') %></p>
     <p><strong>Time</strong>: <%= slot.start_time.strftime('%R') %> - <%= slot.end_time.strftime('%R') %></p>
