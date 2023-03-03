@@ -1,11 +1,18 @@
+<div class="welcome mb-5">
 <h1>Welcome to Dev4Dev</h1>
+</div>
+
 <% if user_signed_in? %>
-  <p>Find a programmer by a language of your choice</p>
+  <div class="welcome">
+    <p>Find a programmer by a language of your choice</p>
+  </div>
 
-  <ul class="my-5 text-center" style="align-items:center;">
-  <li class="card my-5 p-5 rounded shadow" style="width: 30%;">
+    <%= link_to "Add a slot", new_slot_path(params[:format]), class: "btn btn-outline-warning m-5"%>
 
-        <%= link_to slots_path, class: "btn btn-primary my-3", style: "align-items:center;width:100px;align-self:center" do %>
+    <ul class="cards">
+      <li class="card-category">
+
+        <%= link_to slots_path do %>
 
           <h2>
             <strong>
@@ -15,29 +22,31 @@
           </h2>
 
         <% end %>
-    <% Slot::PROGRAMMING_LANGUAGES.each do |p_language| %>
+      <% Slot::PROGRAMMING_LANGUAGES.each do |p_language| %>
 
-      <li class="card my-5 p-5 rounded shadow" style="width: 30%;">
+        <li class="card-category">
 
-        <%= link_to slots_path(p_language), class: "btn btn-primary my-3", style: "align-items:center;width:100px;align-self:center" do %>
+          <%= link_to slots_path(p_language) do %>
 
-          <h2>
-            <strong>
-              <%= p_language %>
-            </strong>
-            Slots
-          </h2>
+            <h2 class="programming_language">
+              <strong>
+                <%= p_language %>
+              </strong>
+              Slots
+            </h2>
+          <% end %>
 
-        <% end %>
-
-      </li>
-
-    <% end %>
+        </li>
+      <% end %>
   </ul>
 
 <% else %>
-
-  <p>Please Sign up or Log in</p>
-  <%= link_to 'log in', new_user_session_path %>
-
+  <div class="welcome">
+    <p>
+      Please
+      <%= link_to 'Sign up', new_user_registration_path, class: 'badge badge-secondary', class: 'btn btn-outline-primary' %>
+       or
+       <%= link_to 'Log in', new_user_session_path, class: 'badge badge-secondary', class: 'btn btn-outline-primary' %>
+    </p>
+  </div>
 <% end %>
