@@ -10,14 +10,13 @@ class Slot < ApplicationRecord
   has_many :gigs
   belongs_to :user
 
-  private
+  # private
 
   # def start_date_cannot_be_in_the_past
   #   if start_date.present? && start_date < Date.today
   #     errors.add(:start_date)
   #   end
   # end
-
 end
 
 # If autocomplete is made, use this array
