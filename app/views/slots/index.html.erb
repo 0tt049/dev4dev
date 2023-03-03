@@ -1,14 +1,14 @@
 <h2>Check <strong><%= params[:format] %></strong> slots</h2>
 
-<%= link_to "Add a slot", new_slot_path(params[:format]), class: "btn btn-warning"%>
+<%= link_to "Add a slot", new_slot_path(params[:format]), class: "btn btn-outline-warning m-5"%>
 
-<ul class="my-5 ">
+<ul class="my-5">
   <% @slots.each do |slot| %>
     <%= link_to slot_path(slot) do %>
       <li class='card-product'>
         <div class="card-product-infos">
 
-          <div class="badge badge-warning">
+          <div class="badge rounded-pill text-bg-primary">
             <%= slot.programming_language %>
           </div>
 

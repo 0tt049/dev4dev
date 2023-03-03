@@ -1,7 +1,7 @@
 .card-category {
   background-size: cover;
   background-position: center;
-  height: 180px;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,4 +15,13 @@
 
 .card-category:hover {
   background-color: #161B22;
+}
+
+.card-category a {
+  color: gray;
+}
+
+.card-category a:hover {
+  text-decoration: underline;
+  color: #1B6DF0;
 }
