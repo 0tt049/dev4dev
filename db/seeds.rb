@@ -9,6 +9,7 @@
 puts "Cleaning up database..."
 Slot.destroy_all
 User.destroy_all
+Gig.destroy_all
 puts "Database cleaned"
 
 puts "Creating users..."
@@ -35,6 +36,18 @@ programming_language = %w[
     end_date: Faker::Date.between(from: '2023-07-01', to: '2023-12-31'),
     start_time: Faker::Time.between(from: '8:00 AM', to: '6:00 PM'),
     end_time: Faker::Time.between(from: '8:00 AM', to: '8:00 PM')
+  )
+end
+
+puts "Creating gigs..."
+30.times do
+  user = User.order("RANDOM()").first
+  slot = Slot.order("RANDOM()").first
+  Gig.create!(
+    name: Faker::Movie.title,
+    description: Faker::Movie.quote,
+    user_id: user.id,
+    slot_id: slot.id
   )
 end
 

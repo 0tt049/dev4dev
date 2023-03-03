@@ -44,6 +44,10 @@ class SlotsController < ApplicationController
     redirect_to slots_path, status: :see_other
   end
 
+  def owned
+    @slots = Slot.where(user_id: current_user.id)
+  end
+
   private
 
   def slot_params
