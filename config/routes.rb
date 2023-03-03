@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   resources :slots do
     resources :gigs, only: %i[new create]
   end
+  # get "slots/:slot_id/gigs/new", to: "gigs#new"
+  # post "slots/:slot_id/gigs", to: "gigs#create"
 end
