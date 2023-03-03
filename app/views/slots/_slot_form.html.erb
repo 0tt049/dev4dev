@@ -7,7 +7,7 @@
   <% end %>
 
   <%= f.input :start_date, error: "The start date must be greater than or equal to today" %>
-  <%= f.input :end_date, error: "You must set an end date", selected: (Time.now + (66 * 60 * 5)) %>
+  <%= f.input :end_date, error: "The end date must be greater than start date", selected: (Time.now + (66 * 60 * 5)) %>
   <%= f.input :start_time, error: "You must set a start time", selected: Time.now %>
   <%= f.input :end_time, error: "You must set an end time", selected: (Time.now + (66 * 60 * 5)) %>
   <%= f.input :price, error: "You must set a price" %>
