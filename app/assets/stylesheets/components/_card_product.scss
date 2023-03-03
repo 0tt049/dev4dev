@@ -1,0 +1,51 @@
+.card-product {
+  overflow: hidden;
+  height: 120px;
+  align-items: center;
+  border: 1px solid rgba(128, 128, 128, .2);
+  border-radius: 15px;
+  .slot-info {
+    text-align: right;
+  }
+}
+
+.card-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+  color: gray;
+}
+
+.card-product-infos p:hover {
+  text-decoration: underline;
+  color: #1B6DF0;
+}
+
+.card-product-infos h3 {
+  color: #ffffff;
+  font: bold;
+}
+
+.card-product-infos h3:hover {
+  text-decoration: underline;
+  color: #1B6DF0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.card-product:hover {
+  background-color: #161B22;
+}

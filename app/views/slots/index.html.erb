@@ -2,26 +2,40 @@
 
 <%= link_to "Add a slot", new_slot_path(params[:format]), class: "btn btn-warning"%>
 
-<ul class="my-5 text-center" style="align-items:center;">
+<ul class="my-5 ">
   <% @slots.each do |slot| %>
+    <%= link_to slot_path(slot) do %>
+      <li class='card-product'>
+        <div class="card-product-infos">
 
-    <li class="card my-5 p-5 rounded shadow" style="width: 30%;">
+          <div class="badge badge-warning">
+            <%= slot.programming_language %>
+          </div>
 
-      <%= link_to slot_path(slot), class: "btn btn-primary my-3", style: "align-items:center;width:100px;align-self:center" do %>
-        <h2>
-          <%= slot.programming_language %>
-        </h2>
+          <div class="d-flex justify-content-between">
 
-        Date: <%= slot.start_date.strftime('%d/%m') %> - <%= slot.end_date.strftime('%d/%m') %>
-        Time: <%= slot.start_time.strftime('%R') %> - <%= slot.end_time.strftime('%R') %>
+            <div class="slot-time-labels">
+              <p>
+              Date: <%= slot.start_date.strftime('%d/%m') %> - <%= slot.end_date.strftime('%d/%m') %>
+              </p>
+              <p>
+              Time: <%= slot.start_time.strftime('%R') %> - <%= slot.end_time.strftime('%R') %>
+              </p>
+            </div>
 
-        <%= slot.user.name %>
+            <div class="slot-info">
+              <p>
+              User: <%= slot.user.name %>
+              </p>
+              <h3>
+              <%= slot.price %> USD
+              </h3>
+            </div>
 
-        <%= slot.price %>
-      <% end %>
-
-    </li>
-
+          </div>
+        </div>
+      </li>
+    <% end %>
   <% end %>
 </ul>
 
