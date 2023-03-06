@@ -11,12 +11,13 @@ class Slot < ApplicationRecord
   belongs_to :user
 
   include PgSearch::Model
+  # multisearchable against: %i[programming_language name]
 
   pg_search_scope :search_programming_language,
                   against: %i[programming_language],
-                  # associated_against: {
-                  #   user: %i[name]
-                  # },
+                  associated_against: {
+                    user: %i[name]
+                  },
                   using: {
                     tsearch: { prefix: true }
                   }
