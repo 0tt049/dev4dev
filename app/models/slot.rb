@@ -10,6 +10,18 @@ class Slot < ApplicationRecord
   has_many :gigs
   belongs_to :user
 
+  include PgSearch::Model
+  # multisearchable against: %i[programming_language name]
+
+  pg_search_scope :search_programming_language,
+                  against: %i[programming_language],
+                  associated_against: {
+                    user: %i[name]
+                  },
+                  using: {
+                    tsearch: { prefix: true }
+                  }
+
   # private
 
   # def end_date_after_start_date
