@@ -7,9 +7,9 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts "Cleaning up database..."
+Gig.destroy_all
 Slot.destroy_all
 User.destroy_all
-Gig.destroy_all
 puts "Database cleaned"
 
 puts "Creating users..."
@@ -32,7 +32,7 @@ programming_language = %w[
     user_id: user.id,
     price: rand(200..1000),
     programming_language: programming_language.sample,
-    start_date: Faker::Date.between(from: '2023-03-04', to: '2023-06-30'),
+    start_date: Faker::Date.between(from: '2023-03-20', to: '2023-06-30'),
     end_date: Faker::Date.between(from: '2023-07-01', to: '2023-12-31'),
     start_time: Faker::Time.between(from: '8:00 AM', to: '6:00 PM'),
     end_time: Faker::Time.between(from: '8:00 AM', to: '8:00 PM')

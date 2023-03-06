@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:show]
   get 'gigs/hired', to: 'gigs#hired'
+  resources :gigs, except: [:new, :create]
 end
