@@ -1,5 +1,4 @@
 class GigsController < ApplicationController
-
   def new
     @gig = Gig.new
     @user = current_user
