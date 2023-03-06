@@ -1,16 +1,10 @@
 class SlotsController < ApplicationController
   def index
-    @gigs = Gig.all
-    # @slots = Slot.joins("LEFT OUTER JOIN gigs ON gigs.slot_id = slots.id")
-    # @slots = Slot.all
+    # Lists all that don't have a gig yet/not bought
     @slots = Slot.left_joins(:gigs).where(gigs: { slot_id: nil })
 
-
-    # Lists all that don't have a gig yet/not bought
-    # all_slots.each { |slot| @slots << slot unless @gigs.where(slot: slot.id).present? }
-
     # Filter by programming language
-    @slots = @slots.where(programming_language: params[:format]) if params[:format].present? # { |slot| slot.programming_language == params[:format] } if params[:format].present?
+    @slots = @slots.where(programming_language: params[:format]) if params[:format].present?
 
     # Searchbar usage
     @slots = @slots.search_programming_language(params[:query]) if params[:query].present?
