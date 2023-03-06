@@ -15,16 +15,27 @@ class GigsController < ApplicationController
     else
       render :new, status: :unprocessable_entity, notice: "Shit happened"
     end
-    # raise
-    # if @gig.save
-    # else
-    # end
   end
 
-  # def destroy
-  #   @gig.destroy
-  #   redirect_to '/', status: :see_other
-  # end
+  def edit
+    @gig = Gig.find(params[:id])
+  end
+
+  def update
+    @gig = Gig.find(params[:id])
+    if @gig.update(gig_params)
+      redirect_to gigs_hired_path, notice: 'Gig updated!'
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @gig = Gig.find(params[:id])
+    @gig.destroy
+    redirect_to slots_path, status: :see_other
+  end
+
 
   def hired
     @gigs = Gig.where(user_id: current_user.id)
