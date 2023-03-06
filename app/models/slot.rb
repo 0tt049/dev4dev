@@ -1,7 +1,7 @@
 class Slot < ApplicationRecord
   PROGRAMMING_LANGUAGES = %w[
-    C# C++ CSS HTML Java JavaScript PHP
-    PowerShell Python Ruby Rust TypeScript
+    C# C++ CSS3 HTML5 Java JavaScript PHP
+    Python Ruby Rust TypeScript
   ]
   validates :price, :programming_language, :start_date, :end_date, :start_time, :end_time, presence: true
   validates :programming_language, acceptance: { accept: PROGRAMMING_LANGUAGES }
