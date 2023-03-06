@@ -2,9 +2,16 @@
 .welcome {
   text-align: center;
   // opacity: 0%;
-  // transition: opacity 1s linear 1s;
+  animation: animate 1s linear 1;
 }
 
-// .welcome:root {
-//   opacity: 100%;
-// }
+@keyframes animate {
+  0%
+  {
+    opacity: 0%;
+  }
+  100%
+  {
+    opacity: 100%;
+  }
+}
