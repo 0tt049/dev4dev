@@ -8,6 +8,7 @@ class SlotsController < ApplicationController
 
     # Searchbar usage
     @slots = @slots.search_programming_language(params[:query]) if params[:query].present?
+
   end
 
   def show

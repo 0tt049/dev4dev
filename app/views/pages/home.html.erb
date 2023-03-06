@@ -39,6 +39,15 @@
 
           <%= link_to slots_path(p_language) do %>
 
+            <div class='d-flex justify-content-center my-3'>
+              <% if p_language == 'C#' %>
+                <i class="devicon-csharp-plain"></i>
+              <% elsif p_language == 'C++' %>
+                <i class="devicon-cplusplus-plain"></i>
+              <% else %>
+                <i class="devicon-<%= p_language.downcase %>-plain"></i>
+              <% end %>
+            </div>
             <h2 class="programming_language">
               <strong><%= p_language %></strong>
               Slots
