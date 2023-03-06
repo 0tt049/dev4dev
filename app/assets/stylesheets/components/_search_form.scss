@@ -9,6 +9,7 @@
   top: 8px;
   bottom: 8px;
   right: 8px;
+  color: rgba(128, 128, 128, 1);
 }
 
 .search-form-control .btn:hover {
@@ -19,7 +20,7 @@
 .search-form-control .form-control {
   height: 3.5rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  border: 1px solid #E7E7E7;
+  border: 1px solid rgba(128, 128, 128, .7);
 }
 
 .search-form-control .form-control:focus {
