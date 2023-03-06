@@ -6,8 +6,8 @@
     <p><strong>Gig description</strong>: <%= gig.description %></p>
     <p><strong>Dev's name</strong>: <%= gig.slot.user.name %></p>
     <p><strong>Dev's email</strong>: <%= gig.slot.user.email %></p>
-    <p><strong>Programming language</strong>: <%= gig.slot.programming_language %></p>
-    <p><strong>Price</strong>: <%= gig.slot.price %></p>
+    <p><strong>Programming language</strong>: <i class="devicon-<%= gig.slot.programming_language.downcase %>-plain"></i> <%= gig.slot.programming_language %></p>
+    <p><strong>Price</strong>: <%= gig.slot.price %> USD</p>
     <p><strong>Date</strong>: <%= gig.slot.start_date.strftime('%d/%m') %> - <%= gig.slot.end_date.strftime('%d/%m') %></p>
     <p><strong>Time</strong>: <%= gig.slot.start_time.strftime('%R') %> - <%= gig.slot.end_time.strftime('%R') %></p>
   </div>

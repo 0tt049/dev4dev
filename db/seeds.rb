@@ -23,7 +23,7 @@ end
 
 puts "Creating slots..."
 programming_language = %w[
-  C# C++ CSS HTML Java JavaScript PHP PowerShell Python
+  C# C++ CSS3 HTML5 Java JavaScript PHP Python
   Ruby Rust TypeScript
 ]
 40.times do
