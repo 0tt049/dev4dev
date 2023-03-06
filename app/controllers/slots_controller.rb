@@ -1,6 +1,12 @@
 class SlotsController < ApplicationController
   def index
+    all_slots = Slot.all
     @slots = Slot.all
+    # all_slots.each do |slot|
+
+    # end
+
+    # gig.slot.user.name
 
     @slots = @slots.where(programming_language: params[:format]) if params[:format].present?
   end
