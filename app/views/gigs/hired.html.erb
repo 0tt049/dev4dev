@@ -2,7 +2,7 @@
 
 <% @gigs.each do |gig| %>
   <div class="my-gig my-3 rounded p-3">
-    <p><strong>Gig name</strong>: <%= gig.name %> USD</p>
+    <p><strong>Gig name</strong>: <%= gig.name %></p>
     <p><strong>Gig description</strong>: <%= gig.description %></p>
     <p><strong>Dev's name</strong>: <%= gig.slot.user.name %></p>
     <p><strong>Dev's email</strong>: <%= gig.slot.user.email %></p>
