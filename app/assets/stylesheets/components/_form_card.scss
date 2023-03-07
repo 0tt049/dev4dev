@@ -1,0 +1,18 @@
+.form-card {
+  width: 50%;
+  align-self: center;
+  margin: 0 auto;
+  background-color: $github-dark-blue;
+  display: flex;
+  flex-direction: column;
+}
+.form-select, .form-control {
+  background-color: $github-medium-blue;
+}
+
+// .form-card  * {
+//   color: red;
+//   background-color: red;
+//   background: red;
+// }
+// [type="date"]

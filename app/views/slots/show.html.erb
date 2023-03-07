@@ -1,17 +1,27 @@
 
 <h1 class='item-header'><%= @slot.programming_language %> slot</h1>
 
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><%= link_to 'Home', root_path %></li>
+    <li class="breadcrumb-item"><%= link_to 'Slots', slots_path(@slot.programming_language) %></li>
+    <li class="breadcrumb-item active" aria-current="page">Slot</li>
+  </ol>
+</nav>
+
 <div class="item-info">
   <p><strong>Dev's email</strong>: <%= @slot.user.email %></p>
   <p><strong>Dev's name</strong>: <%= @slot.user.name %></p>
   <p><strong>Price</strong>: <%= @slot.price %> USD</p>
   <p><strong>Programming language</strong>:
     <% if @slot.programming_language == 'C#' %>
-      <i class="devicon-csharp-plain"></i>
+      <i class="devicon-csharp-plain colored"></i>
     <% elsif @slot.programming_language == 'C++' %>
-      <i class="devicon-cplusplus-plain"></i>
+      <i class="devicon-cplusplus-plain colored"></i>
+    <% elsif @slot.programming_language == 'Rust' %>
+      <i class="devicon-rust-plain"></i>
     <% else %>
-      <i class="devicon-<%= @slot.programming_language.downcase %>-plain"></i>
+      <i class="devicon-<%= @slot.programming_language.downcase %>-plain colored"></i>
     <% end %>
   <%= @slot.programming_language %></p>
   <p><strong>Date</strong>: <%= @slot.start_date.strftime('%d/%m') %> - <%= @slot.end_date.strftime('%d/%m') %></p>

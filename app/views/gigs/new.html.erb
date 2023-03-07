@@ -1,5 +1,7 @@
-<h1>New Gig</h1>
+<div class="form-card">
+  <h1>New Gig</h1>
 
-<%= render 'gig_form', gig: @gig, slot: @slot %>
+  <%= render 'gig_form', gig: @gig, slot: @slot %>
 
-<%= link_to 'Back to home', slots_path %>
+<%= link_to 'Back to slot', slot_path(@slot) %>
+</div>
