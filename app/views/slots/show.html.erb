@@ -2,9 +2,9 @@
 <h1 class='item-header'><%= @slot.programming_language %> slot</h1>
 
 <div class="item-info">
+  <h2><strong>Price</strong>: <strong class="price"><%= number_to_currency(@slot.price) %></strong></h2>
   <p><strong>Dev's email</strong>: <%= @slot.user.email %></p>
   <p><strong>Dev's name</strong>: <%= @slot.user.name %></p>
-  <p><strong>Price</strong>: <%= @slot.price %> USD</p>
   <p><strong>Programming language</strong>:
     <% if @slot.programming_language == 'C#' %>
       <i class="devicon-csharp-plain colored"></i>
