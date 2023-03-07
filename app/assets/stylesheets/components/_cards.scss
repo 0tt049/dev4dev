@@ -2,7 +2,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
+
   animation: animate 2s linear 1;
+
 }
 
 .home-btn {
@@ -19,6 +21,7 @@
   {
     opacity: 100%;
   }
+
 }
 
 // Smallest device

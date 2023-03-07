@@ -39,7 +39,7 @@
 
           <%= link_to slots_path(p_language) do %>
 
-            <div class='d-flex justify-content-center my-3'>
+            <div class="d-flex justify-content-center my-2" id='home-icons'>
               <% if p_language == 'C#' %>
                 <i class="devicon-csharp-plain"></i>
               <% elsif p_language == 'C++' %>
@@ -62,9 +62,9 @@
   <div class="welcome">
     <p>
       Please
-      <%= link_to 'Sign up', new_user_registration_path, class: 'badge badge-secondary', class: 'btn btn-outline-primary' %>
+      <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-outline-primary' %>
        or
-       <%= link_to 'Log in', new_user_session_path, class: 'badge badge-secondary', class: 'btn btn-outline-primary' %>
+       <%= link_to 'Log in', new_user_session_path, class: 'btn btn-outline-primary' %>
     </p>
   </div>
 <% end %>

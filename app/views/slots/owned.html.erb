@@ -1,9 +1,25 @@
-<h1>Your slots</h1>
+<h1>
+  <% if @slots.size > 1 %>
+    Your slots
+  <% elsif @slots.size == 1 %>
+    Your slot
+  <% else %>
+    You haven't created a slot yet... 🙁
+  <% end %>
+</h1>
 
 <% @slots.each do |slot| %>
   <div class="my-slot my-3 rounded p-3">
     <p><strong>Price</strong>: <%= slot.price %> USD</p>
-    <p><strong>Programming language</strong>: <i class="devicon-<%= slot.programming_language.downcase %>-plain"></i> <%= slot.programming_language %></p>
+    <p><strong>Programming language</strong>:
+      <% if slot.programming_language == 'C#' %>
+        <i class="devicon-csharp-plain"></i>
+      <% elsif slot.programming_language == 'C++' %>
+        <i class="devicon-cplusplus-plain"></i>
+      <% else %>
+        <i class="devicon-<%= slot.programming_language.downcase %>-plain"></i>
+      <% end %>
+    <%= slot.programming_language %></p>
     <p><strong>Date</strong>: <%= slot.start_date.strftime('%d/%m') %> - <%= slot.end_date.strftime('%d/%m') %></p>
     <p><strong>Time</strong>: <%= slot.start_time.strftime('%R') %> - <%= slot.end_time.strftime('%R') %></p>
 

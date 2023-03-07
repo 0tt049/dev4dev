@@ -1,4 +1,12 @@
-<h2>Check <strong><%= params[:format] %></strong> slots</h2>
+<h2>
+  <% if @slots.size > 1 %>
+    Check <strong><%= params[:format] %></strong> slots
+  <% elsif @slots.size == 1 %>
+    Check <strong><%= params[:format] %></strong> slot
+  <% else %>
+    You can be the one to create a <strong><%= params[:format] %></strong> slot! 🤓
+  <% end %>
+</h2>
 
 <%= link_to "Add a slot", new_slot_path(params[:format]), class: "btn btn-outline-warning m-5"%>
 
@@ -9,7 +17,14 @@
         <div class="card-product-infos">
 
           <div class="badge rounded-pill text-bg-primary">
-            <i class="devicon-<%= slot.programming_language.downcase %>-plain"></i> <%= slot.programming_language %>
+            <% if slot.programming_language == 'C#' %>
+              <i class="devicon-csharp-plain"></i>
+            <% elsif slot.programming_language == 'C++' %>
+              <i class="devicon-cplusplus-plain"></i>
+            <% else %>
+              <i class="devicon-<%= slot.programming_language.downcase %>-plain"></i>
+            <% end %>
+            <%= slot.programming_language %>
           </div>
 
           <div class="d-flex justify-content-between">

@@ -1,4 +1,12 @@
-<h1>Your gigs</h1>
+<h1>
+  <% if @gigs.size > 1 %>
+    Your gigs
+  <% elsif @gigs.size == 1 %>
+    Your gig
+  <% else %>
+    You haven't hired a gig yet... 🙁
+  <% end %>
+</h1>
 
 <% @gigs.each do |gig| %>
   <div class="my-gig my-3 rounded p-3">
@@ -6,11 +14,19 @@
     <p><strong>Gig description</strong>: <%= gig.description %></p>
     <p><strong>Dev's name</strong>: <%= gig.slot.user.name %></p>
     <p><strong>Dev's email</strong>: <%= gig.slot.user.email %></p>
-    <p><strong>Programming language</strong>: <i class="devicon-<%= gig.slot.programming_language.downcase %>-plain"></i> <%= gig.slot.programming_language %></p>
+    <p><strong>Programming language</strong>:
+    <% if gig.slot.programming_language == 'C#' %>
+      <i class="devicon-csharp-plain"></i>
+    <% elsif gig.slot.programming_language == 'C++' %>
+      <i class="devicon-cplusplus-plain"></i>
+    <% else %>
+      <i class="devicon-<%= gig.slot.programming_language.downcase %>-plain"></i>
+    <% end %>
+    <%= gig.slot.programming_language %></p>
     <p><strong>Price</strong>: <%= gig.slot.price %> USD</p>
     <p><strong>Date</strong>: <%= gig.slot.start_date.strftime('%d/%m') %> - <%= gig.slot.end_date.strftime('%d/%m') %></p>
     <p><strong>Time</strong>: <%= gig.slot.start_time.strftime('%R') %> - <%= gig.slot.end_time.strftime('%R') %></p>
   </div>
-  <%#= link_to "Edit this gig", edit_gig_path(gig), class: "btn btn-info" %>
-  <%#= link_to "Cancel this gig", gig, class: "btn btn-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to cancel this gig?" } %>
+  <%= link_to "Edit this gig", edit_gig_path(gig), class: "btn btn-info" %>
+  <%= link_to "Cancel this gig", gig, class: "btn btn-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to cancel this gig?" } %>
 <% end %>
