@@ -1,4 +1,12 @@
-<h1>Your gigs</h1>
+<h1>
+  <% if @gigs.size > 1 %>
+    Your gigs
+  <% elsif @gigs.size == 1 %>
+    Your gig
+  <% else %>
+    You haven't hired a gig yet... 🙁
+  <% end %>
+</h1>
 
 <% @gigs.each do |gig| %>
   <div class="my-gig my-3 rounded p-3">
