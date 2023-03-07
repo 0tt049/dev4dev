@@ -30,7 +30,6 @@ class SlotsController < ApplicationController
     end
   end
 
-<<<<<<< Updated upstream
   def edit
     @slot = Slot.find(params[:id])
   end
@@ -54,8 +53,6 @@ class SlotsController < ApplicationController
     @slots = Slot.where(user_id: current_user.id)
   end
 
-=======
->>>>>>> Stashed changes
   private
 
   def slot_params
