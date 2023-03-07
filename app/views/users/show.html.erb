@@ -1,8 +1,17 @@
-<h1><%= @user.name %>'s profile</h1>
 
+<h1 class='item-header mb-5'><%= @user.name %></h1>
 
-<p><strong>Email</strong>: <%= @user.email %></p>
+<div class="d-flex flex-row align-items-top ml-2">
+  <div>
+    <%= image_tag "#{@user.avatar_url}", class: "avatar-x-large" %>
+  </div>
+  <div class="item-info mt-0">
+    <p><strong>Email</strong>: <%= @user.email %></p>
+    <p><strong>City</strong>: <%= @user.location %></p>
+    <%= link_to "", "#{@user.html_url}", class: "devicon-github-original" %>
+  </div>
+</div>
 
 <% if @user == current_user %>
-  <%= link_to "Edit profile", edit_user_registration_path, class: "btn btn-info" %>
+  <%= link_to "Edit profile", edit_user_registration_path, class: "btn btn-info m-2" %>
 <% end %>
