@@ -3,6 +3,13 @@
   i {
     font-size: 24px;
   }
+  .price {
+    color: $github-light-blue;
+  }
+  .price:hover {
+    color: white;
+    transition: .6s ease-in-out;
+  }
 }
 
 .item-header {
