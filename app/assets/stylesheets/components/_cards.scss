@@ -2,11 +2,11 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
-  animation: animate 3s linear 1;
+  animation: animate 2s linear 1;
 }
 
 .home-btn {
-  animation: animate 3s linear 1;
+  animation: animate 2s linear 1;
 }
 
 @keyframes animate {
