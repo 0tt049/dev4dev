@@ -5,12 +5,15 @@
   <% else %>
     <%= f.input :programming_language, collection: Slot::PROGRAMMING_LANGUAGES, error: 'Setting a programming language is mandatory' %>
   <% end %>
-
-  <%= f.input :start_date, error: "The start date must be greater than or equal to today", html5: true %>
-  <%= f.input :end_date, error: "The end date must be greater than start date", selected: (Time.now + (66 * 60 * 5)), html5: true %>
-  <%= f.input :start_time, error: "You must set a start time", selected: Time.now, html5: true %>
-  <%= f.input :end_time, error: "You must set an end time", selected: (Time.now + (66 * 60 * 5)), html5: true %>
+  <div class="d-flex">
+    <%= f.input :start_date, error: "The start date must be greater than or equal to today", html5: true, html5: true, input_html: {style: 'width: 100%'} %>
+    <%= f.input :end_date, error: "The end date must be greater than start date", selected: (Time.now + (66 * 60 * 5)), html5: true, input_html: {style: 'width: 100%'} %>
+  </div>
+  <div class="d-flex">
+    <%= f.input :start_time, error: "You must set a start time", selected: Time.now, html5: true, html5: true, input_html: {style: 'width: 100%'} %>
+    <%= f.input :end_time, error: "You must set an end time", selected: (Time.now + (66 * 60 * 5)), html5: true, html5: true, input_html: {style: 'width: 100%;'} %>
+  </div>
   <%= f.input :price, error: "You must set a price" %>
 
-  <%= f.button :submit, class: 'btn btn-success m-2'%>
+  <%= f.button :submit, class: 'btn btn-success m-2' %>
 <% end %>
