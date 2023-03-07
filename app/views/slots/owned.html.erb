@@ -1,4 +1,12 @@
-<h1>Your slots</h1>
+<h1>
+  <% if @slots.size > 1 %>
+    Your slots
+  <% elsif @slots.size == 1 %>
+    Your slot
+  <% else %>
+    You haven't created a slot yet... 🙁
+  <% end %>
+</h1>
 
 <% @slots.each do |slot| %>
   <div class="my-slot my-3 rounded p-3">
