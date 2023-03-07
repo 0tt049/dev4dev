@@ -2,6 +2,25 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
+  animation: animate 3s linear 1;
+  padding: 0;
+}
+
+.home-btn {
+  animation: animate 3s linear 1;
+}
+
+@keyframes animate {
+  0%,45%
+  {
+    opacity: 0%;
+  }
+
+  100%
+  {
+    opacity: 100%;
+  }
+
 }
 
 // Smallest device

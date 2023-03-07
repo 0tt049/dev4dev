@@ -4,4 +4,9 @@
   right: 16px;
   z-index: 1000;
   background-color: $github-dark-blue;
+  color: $body-color;
+}
+.alert .btn-close {
+  opacity: 100%;
+  color: $body-color;
 }

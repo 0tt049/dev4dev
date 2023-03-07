@@ -1,4 +1,8 @@
 // to style the whole website
-body {
-  height: 100vh;
+.btn-warning {
+  color: #ffffff;
+}
+
+.btn-info:hover, .btn-danger:hover {
+  color: #ffffff;
 }

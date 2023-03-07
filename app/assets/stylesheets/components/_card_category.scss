@@ -1,7 +1,7 @@
 .card-category {
   background-size: cover;
   background-position: center;
-  height: 100px;
+  height: 122px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,6 +22,9 @@
 }
 
 .card-category a:hover {
-  text-decoration: underline;
   color: #1B6DF0;
+}
+
+.card-category #home-icons {
+  font-size: 40px;
 }
