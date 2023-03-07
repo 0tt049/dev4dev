@@ -11,7 +11,7 @@ class GigsController < ApplicationController
     @gig.slot = @slot
     @gig.user = current_user
     if @gig.save
-      redirect_to slot_path(params[:slot_id]), notice: 'Your gig was successfully created!'
+      redirect_to gigs_hired_path(params[:slot_id]), notice: 'Your gig was successfully created!'
     else
       render :new, status: :unprocessable_entity, notice: "Shit happened"
     end
