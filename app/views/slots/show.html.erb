@@ -1,6 +1,14 @@
 
 <h1 class='item-header'><%= @slot.programming_language %> slot</h1>
 
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><%= link_to 'Home', root_path %></li>
+    <li class="breadcrumb-item"><%= link_to 'Slots', slots_path(@slot.programming_language) %></li>
+    <li class="breadcrumb-item active" aria-current="page">Slot</li>
+  </ol>
+</nav>
+
 <div class="item-info">
   <p><strong>Dev's email</strong>: <%= @slot.user.email %></p>
   <p><strong>Dev's name</strong>: <%= @slot.user.name %></p>
