@@ -10,7 +10,7 @@
 
 <% @slots.each do |slot| %>
   <div class="my-slot my-3 rounded p-3">
-    <p><strong>Price</strong>: <%= slot.price %> USD</p>
+    <h3><strong>Price</strong>: <strong class="price"><%= number_to_currency(slot.price) %></strong></h3>
     <p><strong>Programming language</strong>:
       <% if slot.programming_language == 'C#' %>
         <i class="devicon-csharp-plain"></i>
