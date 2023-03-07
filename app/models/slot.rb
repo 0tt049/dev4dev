@@ -7,7 +7,7 @@ class Slot < ApplicationRecord
   validates :programming_language, acceptance: { accept: PROGRAMMING_LANGUAGES }
   validate :end_date_after_start_date
 
-  has_many :gigs
+  has_one :gig
   belongs_to :user
 
   include PgSearch::Model
