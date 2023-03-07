@@ -25,8 +25,6 @@
             <% end %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "My profile", user_path(current_user), class: "dropdown-item" %>
-              <%= link_to "Check my Gigs", gigs_hired_path, class: "dropdown-item" %>
-              <%= link_to "Check my Slots", owned_slots_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
