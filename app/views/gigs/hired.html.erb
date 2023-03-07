@@ -28,7 +28,7 @@
     <%= gig.slot.programming_language %></p>
     <p><strong>Date</strong>: <%= gig.slot.start_date.strftime('%d/%m') %> - <%= gig.slot.end_date.strftime('%d/%m') %></p>
     <p><strong>Time</strong>: <%= gig.slot.start_time.strftime('%R') %> - <%= gig.slot.end_time.strftime('%R') %></p>
+    <%= link_to "Edit this gig", edit_gig_path(gig), class: "btn btn-info" %>
+    <%= link_to "Cancel this gig", gig, class: "btn btn-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to cancel this gig?" } %>
   </div>
-  <%= link_to "Edit this gig", edit_gig_path(gig), class: "btn btn-info" %>
-  <%= link_to "Cancel this gig", gig, class: "btn btn-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to cancel this gig?" } %>
 <% end %>
