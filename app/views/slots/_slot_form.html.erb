@@ -10,7 +10,7 @@
   <%= f.input :end_date, error: "The end date must be greater than start date", selected: (Time.now + (66 * 60 * 5)), html5: true %>
   <%= f.input :start_time, error: "You must set a start time", selected: Time.now, html5: true %>
   <%= f.input :end_time, error: "You must set an end time", selected: (Time.now + (66 * 60 * 5)), html5: true %>
-  <%= f.input :price, error: "You must set a price" %>
+  <%= f.input :price, error: "You must set a price", label: "Price(USD)" %>
 
   <%= f.button :submit, class: 'btn btn-success m-2'%>
 <% end %>
