@@ -8,6 +8,13 @@
   <% end %>
 </h2>
 
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><%= link_to 'Home', root_path %></li>
+    <li class="breadcrumb-item active" aria-current="page">Slots</li>
+  </ol>
+</nav>
+
 <%= link_to "Add a slot", new_slot_path(params[:format]), class: "btn btn-outline-warning m-5"%>
 
 <ul class="my-5">
