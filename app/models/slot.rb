@@ -5,7 +5,7 @@ class Slot < ApplicationRecord
   ]
   validates :price, :programming_language, :start_date, :end_date, :start_time, :end_time, presence: true
   validates :programming_language, acceptance: { accept: PROGRAMMING_LANGUAGES }
-  #  validate :end_date_after_start_date
+  validate :end_date_after_start_date
 
   has_many :gigs
   belongs_to :user
@@ -24,15 +24,15 @@ class Slot < ApplicationRecord
 
   # private
 
-  # def end_date_after_start_date
-  #  return if end_date.blank? || start_date.blank?
+  def end_date_after_start_date
+    return if end_date.blank? || start_date.blank?
 
-  # if end_date < start_date
-  # errors.add(:end_date, "must be after the start date")
-  # elsif start_date < Date.today
-  # errors.add(:start_date)
-  #  end
-  # end
+    if end_date < start_date
+      errors.add(:end_date, "must be after the start date")
+    elsif start_date < Date.today
+      errors.add(:start_date)
+    end
+  end
 
   # If autocomplete is made, use this array
   # PROGRAMMING_LANGUAGES = %w[1C Enterprise
